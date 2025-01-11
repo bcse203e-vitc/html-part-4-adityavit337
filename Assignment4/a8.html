@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Quiz Submission Form</title>
+</head>
+<body>
+    <h2>Online Quiz Submission Form</h2>
+    <div>
+        Time Remaining: <span id="time">10:00</span>
+    </div>
+    <form action="/submit_quiz" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <h3>Quiz Questions</h3>
+        <p>1. Which of the following is used to style web pages?</p>
+        <input type="radio" id="html" name="question1" value="HTML">
+        <label for="html">HTML</label><br>
+        <input type="radio" id="css" name="question1" value="CSS">
+        <label for="css">CSS</label><br>
+        <input type="radio" id="javascript" name="question1" value="JavaScript">
+        <label for="javascript">JavaScript</label><br>
+        <input type="radio" id="python" name="question1" value="Python">
+        <label for="python">Python</label><br><br>
+        <p>2. What is currently being taught in class of WebProgramming?</p>
+        <input type="checkbox" id="html2" name="question2" value="HTML">
+        <label for="html2">HTML</label><br>
+        <input type="checkbox" id="css2" name="question2" value="CSS">
+        <label for="css2">CSS</label><br>
+        <input type="checkbox" id="javascript2" name="question2" value="JavaScript">
+        <label for="javascript2">JavaScript</label><br>
+        <input type="checkbox" id="python2" name="question2" value="Python">
+        <label for="python2">Python</label><br><br>
+        <input type="submit" value="Submit Quiz">
+    </form>
+    <script>
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+        window.onload = function () {
+            let quizDuration = 60 * 10; 
+            let display = document.querySelector('#time');
+            startTimer(quizDuration, display);
+        };
+    </script>
+</body>
+</html>
