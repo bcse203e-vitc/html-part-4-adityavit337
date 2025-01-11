@@ -3,28 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Travel Booking Form</title>
-    <script>
-        function calculateTotalCost() {
-            const numTravelers = document.getElementById('numTravelers').value;
-            const travelClass = document.querySelector('input[name="travelClass"]:checked').value;
-            let costPerTraveler;
-            switch (travelClass) {
-                case 'economy':
-                    costPerTraveler = 100;
-                    break;
-                case 'business':
-                    costPerTraveler = 200;
-                    break;
-                case 'firstClass':
-                    costPerTraveler = 300;
-                    break;
-                default:
-                    costPerTraveler = 0;
-            }
-            const totalCost = numTravelers * costPerTraveler;
-            document.getElementById('totalCost').value = '$' + totalCost;
-        }
-    </script>
 </head>
 <body>
     <h2>Travel Booking Form</h2>
