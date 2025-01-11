@@ -32,21 +32,5 @@
         <label>Total Price: $</label><span id="totalPrice">10</span><br><br>
         <input type="submit" value="Submit Order">
     </form>
-    <script>
-        function calculatePrice() {
-            const productPrice = parseFloat(document.getElementById('product').value);
-            const quantity = parseInt(document.getElementById('quantity').value) || 1;
-            const totalPrice = productPrice * quantity;
-            document.getElementById('totalPrice').textContent = totalPrice.toFixed(2);
-        }
-        function applyCoupon() {
-            const coupon = document.getElementById('coupon').value.trim().toLowerCase();
-            let totalPrice = parseFloat(document.getElementById('totalPrice').textContent);
-            if (coupon === 'discount10') {
-                totalPrice *= 0.9;
-            }
-            document.getElementById('totalPrice').textContent = totalPrice.toFixed(2);
-        }
-    </script>
 </body>
 </html>
