@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customizable Form Template</title>
+</head>
+<body>
+    <h2>Customizable Form Template</h2>
+    <form action="/submit_custom_form" method="post">
+        <label for="formName">Form Name:</label><br>
+        <input type="text" id="formName" name="formName" required><br><br>
+        <label for="numFields">Number of Input Fields:</label><br>
+        <input type="number" id="numFields" name="numFields" required><br><br>
+        <label for="fieldType1">Field Type 1:</label><br>
+        <select id="fieldType1" name="fieldType1" required>
+            <option value="text">Text</option>
+            <option value="email">Email</option>
+            <option value="number">Number</option>
+            <option value="date">Date</option>
+        </select><br><br>
+        <label for="fieldLabel1">Field Label 1:</label><br>
+        <input type="text" id="fieldLabel1" name="fieldLabel1" required><br><br>
+        <label for="fieldType2">Field Type 2:</label><br>
+        <select id="fieldType2" name="fieldType2">
+            <option value="text">Text</option>
+            <option value="email">Email</option>
+            <option value="number">Number</option>
+            <option value="date">Date</option>
+        </select><br><br>
+        <label for="fieldLabel2">Field Label 2:</label><br>
+        <input type="text" id="fieldLabel2" name="fieldLabel2"><br><br>
+        <input type="submit" value="Submit Custom Form">
+    </form>
+    <h3>Form Preview</h3>
+    <form>
+        <label for="previewField1">Field Label 1:</label><br>
+        <input type="text" id="previewField1" name="previewField1"><br><br>
+        <label for="previewField2">Field Label 2:</label><br>
+        <input type="email" id="previewField2" name="previewField2"><br><br>
+    </form>
+</body>
+</html>
