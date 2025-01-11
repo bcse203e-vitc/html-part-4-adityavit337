@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Booking Form</title>
+    <script>
+        function calculateTotalCost() {
+            const numTravelers = document.getElementById('numTravelers').value;
+            const travelClass = document.querySelector('input[name="travelClass"]:checked').value;
+            let costPerTraveler;
+            switch (travelClass) {
+                case 'economy':
+                    costPerTraveler = 100;
+                    break;
+                case 'business':
+                    costPerTraveler = 200;
+                    break;
+                case 'firstClass':
+                    costPerTraveler = 300;
+                    break;
+                default:
+                    costPerTraveler = 0;
+            }
+            const totalCost = numTravelers * costPerTraveler;
+            document.getElementById('totalCost').value = '$' + totalCost;
+        }
+    </script>
+</head>
+<body>
+    <h2>Travel Booking Form</h2>
+    <form action="/submit_booking" method="post">
+        <label for="fullName">Full Name:</label><br>
+        <input type="text" id="fullName" name="fullName" required><br><br>
+        <label for="contactInfo">Contact Information:</label><br>
+        <input type="text" id="contactInfo" name="contactInfo" required><br><br>
+        <label for="destination">Destination:</label><br>
+        <select id="destination" name="destination" required>
+            <option value="shimla">Shimla</option>
+            <option value="delhi">Delhi</option>
+            <option value="chennai">Chennai</option>
+            <option value="mumbai">Mumbai</option>
+        </select><br><br>
+        <label for="travelDates">Travel Dates:</label><br>
+        <input type="date" id="travelDates" name="travelDates" required><br><br>
+        <label for="numTravelers">Number of Travelers:</label><br>
+        <input type="number" id="numTravelers" name="numTravelers" required oninput="calculateTotalCost()"><br><br>
+        <label>Travel Class:</label><br>
+        <input type="radio" id="economy" name="travelClass" value="economy" required onclick="calculateTotalCost()">
+        <label for="economy">Economy</label><br>
+        <input type="radio" id="business" name="travelClass" value="business" onclick="calculateTotalCost()">
+        <label for="business">Business</label><br>
+        <input type="radio" id="firstClass" name="travelClass" value="firstClass" onclick="calculateTotalCost()">
+        <label for="firstClass">First Class</label><br><br>
+        <input type="checkbox" id="travelInsurance" name="travelInsurance">
+        <label for="travelInsurance">Opt for Travel Insurance</label><br><br>
+        <label for="totalCost">Total Cost:</label><br>
+        <input type="text" id="totalCost" name="totalCost" readonly><br><br>
+        <input type="submit" value="Book Travel">
+    </form>
+</body>
+</html>
