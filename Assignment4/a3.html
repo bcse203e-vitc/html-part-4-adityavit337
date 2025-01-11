@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Website Feedback</title>
+</head>
+<body>
+    <h2>Website Feedback Form</h2>
+    <form action="/submit_feedback" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <label>Rate the Website:</label><br>
+        <input type="radio" id="star1" name="rating" value="1" required>
+        <label for="star1">1 Star</label><br>
+        <input type="radio" id="star2" name="rating" value="2">
+        <label for="star2">2 Stars</label><br>
+        <input type="radio" id="star3" name="rating" value="3">
+        <label for="star3">3 Stars</label><br>
+        <input type="radio" id="star4" name="rating" value="4">
+        <label for="star4">4 Stars</label><br>
+        <input type="radio" id="star5" name="rating" value="5">
+        <label for="star5">5 Stars</label><br><br>
+        <label for="feedbacktype">Type of Feedback:</label><br>
+        <select id="feedbacktype" name="feedbacktype" required>
+            <option value="suggestion">Suggestion</option>
+            <option value="bug">Bug Report</option>
+            <option value="compliment">Compliment</option>
+        </select><br><br>
+        <label for="feedback">Your Feedback:</label><br>
+        <textarea id="feedback" name="feedback" rows="4" cols="60" required></textarea><br><br>
+        <label>Would you recommend us?</label><br>
+        <input type="radio" id="yes" name="recommend" value="yes" required>
+        <label for="yes">Yes</label><br>
+        <input type="radio" id="no" name="recommend" value="no">
+        <label for="no">No</label><br><br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>
